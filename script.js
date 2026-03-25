@@ -14,7 +14,9 @@ function getRandomNum(max){
 }
 
 // 3) myAdder(x, y): numeric sum
-
+function myAdder(x, y){
+  return x + y; 
+}
 // 4) distance(x1, y1, x2, y2): Euclidean distance
 function distance(x1, y1, x2, y2){
   return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
