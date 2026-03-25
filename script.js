@@ -1,8 +1,23 @@
 // ----- Functions to implement -----
 
 // 1) myFunc(): persistent counter
-
+let counter = 0; 
+function myFunct(){
+  counter ++; 
+  return counter; 
+}
 // 2) getRandomNum(max): 1..max int or 0 if invalid
+function getRandomNum(max){
+  max = parseInt(max); 
+  if (isNaN(max) || max < 1) return 0; 
+  return Math.floor(Math.random() * max) + 1; 
+}
+
+for (let i = 0; i < 5; i++){
+  console.log("Random 1-10:" + getRandomNum(10)); 
+}
+console.log("Invalid:", getRandomNum(-5)); 
+console.log("Invalid:", getRandomNum("abc")); 
 
 // 3) myAdder(x, y): numeric sum
 
