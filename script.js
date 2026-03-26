@@ -2,7 +2,7 @@
 
 // 1) myFunc(): persistent counter
 let counter = 0; 
-function myFunct(){
+function myFunc(){
   counter ++; 
   return counter; 
 }
@@ -23,7 +23,18 @@ function distance(x1, y1, x2, y2){
 }
 // 5) quadratic(a, b, c): roots of ax^2 + bx + c = 0
 function quadratic(a, b, c){
-  return x = (-b +sqrt(b**2 - 4 * a * c)) / (a * 2); 
+  a = +a; b = +b; c = +c;
+  if (a === 0) return "Not a quadratic equation";
+  const d = b*b - 4*a*c;
+  const denom = 2 * a;
+  const realPart = -b / denom;
+  if (d >= 0) {
+    const sqrtD = Math.sqrt(d);
+    return [realPart + sqrtD / denom, realPart - sqrtD / denom];
+  } else {
+    const sqrtD = Math.sqrt(-d);
+    return [`${realPart} + ${sqrtD / denom}i`, `${realPart} - ${sqrtD / denom}i`];
+  }
 }
 
 // ----- Helpers -----
